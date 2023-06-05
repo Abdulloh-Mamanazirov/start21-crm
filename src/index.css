@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.layout{
+    display: grid;
+    grid-template-columns: 240px 1fr;
+}
+
+.scroll::-webkit-scrollbar{
+    background: transparent;
+    width: 10px;
+}
+.scroll::-webkit-scrollbar-thumb{
+    border-radius: 17px;
+    background: rgb(134, 134, 134);
+}
