@@ -9,7 +9,7 @@ import "react-toastify/dist/ReactToastify.min.css";
 import "./index.css";
 
 let token = localStorage.getItem("start21-token")
-axios.defaults.baseURL = "http://localhost:2100/api";
+axios.defaults.baseURL = "https://start21-backend.onrender.com/api";
 axios.defaults.headers.common["token"] = token;
 
 ReactDOM.createRoot(document.getElementById("root")).render(

@@ -27,7 +27,7 @@ const Courses = () => {
     setTimeout(async ()=>{
       let { data } = await axios.post("/allCourses",{title:search});
       setCourses(data)
-    },0)
+    },500)
   }, [search]);
   
   async function handleSubmit(e){

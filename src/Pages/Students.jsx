@@ -51,7 +51,7 @@ const Students = () => {
       let { data } = await axios.post("/students", { name: search });
       setStudents(data);
       setArrayNum(Math.ceil(data?.length / 10));
-    }, 0);
+    }, 500);
   }, [search]);
 
   async function handleSubmit(e) {

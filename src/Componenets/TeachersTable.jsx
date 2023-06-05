@@ -31,7 +31,7 @@ const TeachersTable = () => {
     setTimeout(async() => {
       let {data}= await axios.post("/teachers",{name:search})
       setTeachers(data)
-    }, 0);
+    }, 500);
   },[search])
 
   async function handleSubmit(e) {
