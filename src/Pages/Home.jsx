@@ -18,11 +18,11 @@ const Home = () => {
 
   let doughnut = {
     data: {
-      labels: ["Teachers", "Marketing", "Cleaners", "Administrators", "Others"],
+      labels: ["Teachers", "Marketing", "Administrators", "Cleaners", "Others"],
       datasets: [
         {
-          data: [150, 60, 70, 80, 90],
-          backgroundColor: ["red", "green", "blue", "purple", "yellow"],
+          data: [150, 8, 10, 80, 30],
+          backgroundColor: ["red", "lime", "blue", "purple", "yellow"],
         },
       ],
     },
