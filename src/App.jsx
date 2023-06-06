@@ -11,25 +11,29 @@ import Login from "./Pages/Login";
 import News from "./Pages/News";
 import Students from "./Pages/Students";
 import Teachers from "./Pages/Teachers";
+import { toast } from "react-toastify";
 
 function App() {
   let navigate = useNavigate();
   let location = useLocation();
-  let [loading, setLoading] = useState();
+  let [loading, setLoading] = useState(true);
 
   useEffect(() => {
     let token = localStorage.getItem("start21-token");
-    if (!token) return navigate("/log-in");
+    if (!token) navigate("/log-in");
     async function get() {
-      let { data } = await axios.get("/stats");
-      setLoading(data);
+      let res = await axios.get("/stats").catch(error=>{if(error) return toast("Something went wrong!",{type:"error"})});
+      if(res?.data === "Invalid token") return navigate("/log-in");
     }
     get();
+    setTimeout(()=>{
+      setLoading(false);
+    },2500)
   }, []);
 
   return (
     <>
-      {loading === undefined ? (
+      {loading ? (
         <div className="absolute inset-0 grid place-items-center">
           <div>
             <ScaleLoader color="rgb(14, 134, 233)" />
